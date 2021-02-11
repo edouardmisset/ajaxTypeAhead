@@ -20,6 +20,11 @@ const findQuery = (query, cities = []) => {
   });
 };
 
+// Format numbers
+const formatNumber = (someNumber) => {
+  return someNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+
 // Display result
 function displayResult() {
   const matchedQuery = findQuery(this.value, cities);
@@ -35,7 +40,7 @@ function displayResult() {
       return `
     <li>
       <span class="name">${cityName}, ${stateName}</span>
-      <span class="name">${population}</span>
+      <span class="name">${formatNumber(population)}</span>
     </li>
   `;
     })
