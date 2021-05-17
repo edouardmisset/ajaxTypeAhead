@@ -8,9 +8,9 @@ input.addEventListener('change', displayResult);
 input.addEventListener('keyup', displayResult);
 
 fetch(endpoint)
-  .then((res) => res.json())
-  .then((data) => cities.push(...data))
-  .catch((err) => console.warn(err));
+  .then(res => res.json())
+  .then(data => cities.push(...data))
+  .catch(err => console.warn(err));
 
 // Filter
 const findQuery = (query, cities = []) => {
@@ -21,7 +21,7 @@ const findQuery = (query, cities = []) => {
 };
 
 // Format numbers
-const formatNumber = (someNumber) => {
+const formatNumber = someNumber => {
   return someNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
 
