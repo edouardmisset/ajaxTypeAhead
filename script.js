@@ -15,9 +15,9 @@ fetch(endpoint)
 // Filter
 const findQuery = (query, cities = []) => {
   const regex = new RegExp(query, 'gi');
-  return cities.filter(({ city, state }) => {
-    return city.match(regex) || state.match(regex);
-  });
+  return cities.filter(
+    ({ city, state }) => city.match(regex) || state.match(regex)
+  );
 };
 
 // Format numbers
